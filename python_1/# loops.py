@@ -17,5 +17,5 @@ cond = 5
 
 while cond <= 5:
     #print('hello world')
-    cond = cond + 1
+    cond = cond
     print(cond)

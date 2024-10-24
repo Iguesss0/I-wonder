@@ -6,6 +6,6 @@ def myfunction(text):
 
 
 
-myfunction('I wonder') # calling the function
-myfunction('I guess so')
-myfunction('You reckon')
+myfunction('') # calling the function
+myfunction('')
+myfunction('')
