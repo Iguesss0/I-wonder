@@ -5,12 +5,10 @@ fanOpp = input(question_options[1])
 bankAccountBalance = 100
 
 if fanCP:
-    sys.exit()
+    sys.exit(-1)
 
-def ask_question(your_question_options):
-    cond = True
-    while cond:
-        ask_question('Is Brighton winning the league in 2024?')
+def ask_question(question):
+        question = print('Is Brighton winning the league in 2024?')
         your_question_options = input("Your question options: (Yes/Of Course or No)")
 
         if fanFor:
