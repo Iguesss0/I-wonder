@@ -1,10 +1,20 @@
+username = "Iguessso"
+age = 14
+bankAccountBalance = 44.44
+lotteryAmount = 252000
+print( "Your account balance is", bankAccountBalance )
+
+
+
+
 # loops
 
 print('hello world') 
 
 
 # for loops
-number_of_times = 5
+number_of_times = 5 
+
 
 
 for index in range(5):
@@ -23,14 +33,13 @@ while cond <= 5:
 colors = ['red', 'blue']
 print(colors[0])
 
-# block of reasonable code
+#a few sayings
 
-#
 def myfunction(text):
     print(text)
 
 
 
-myfunction('I wonder') # calling the function
-myfunction('I guess so')
-myfunction('You reckon')
+myfunction('I wonder')
+myfunction('I guess so') 
+myfunction('You reckon')                      

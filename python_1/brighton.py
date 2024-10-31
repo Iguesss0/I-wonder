@@ -2,7 +2,7 @@ fanCP = "Crystal Palace"
 question_options = ['Yes/Of Course', 'No']
 fanFor = input(question_options[0])
 fanOpp = input(question_options[1])
-bankAccountBalance = 100
+bankAccountBalance = 100        
 
 if fanCP:
     sys.exit(-1)
