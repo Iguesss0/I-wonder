@@ -33,13 +33,12 @@ while cond <= 5:
 colors = ['red', 'blue']
 print(colors[0])
 
-#a few sayings
-
+# This function takes from a user in text and displays the text
 def myfunction(text):
     print(text)
 
 
 
-myfunction('I wonder')
+myfunction('I wonder') 
 myfunction('I guess so') 
-myfunction('You reckon')                      
+myfunction('You reckon')               
