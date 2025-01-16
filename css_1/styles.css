@@ -1,0 +1,40 @@
+h1 {
+    color: purple;
+    text-align: center;
+    font-size: 50px;
+    font-family:monospace;
+    padding: 50px 50px 50px 50px;
+    margin: 50px 50px 50px 50px
+}
+
+p {
+    background-color: orangered;
+    color: #0000ff;
+    width: 60%;
+}
+
+    .box {
+    float: right;
+    margin-left: 15px;
+    width: 350px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgb(207 232 220);
+    padding: 1em;
+  }
+
+  .positioned {
+   position: relative;
+   background:rgb(3 0 142);
+   color: white;
+   font-size: 100;
+   top: 150px;
+   left: 150px;
+  }
+
+ul {
+    display: none;
+}
+ol {
+    display: none;
+}
