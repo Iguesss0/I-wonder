@@ -54,7 +54,7 @@ ol {
     width: 100vw;        /* Full viewport width */
     height: 100vh;       /* Full viewport height */
   }
-  /*img {
+img {
     width: 300px;
     height: 300px;
     position: absolute;   /* Allow positioning relative to the container */
