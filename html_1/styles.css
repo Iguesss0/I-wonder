@@ -1,13 +1,21 @@
-body{
+body {
     background-color:  lightyellow;
 }
-h1 {
-    color: purple;
-    text-align: center;
-    font-size: 50px;
-    font-family:monospace;
-    padding: 50px 50px 50px 50px;
-    margin: 50px 50px 50px 50px
+header {
+  color: purple;
+  text-align: center; /* Centers header text */
+  font-size: 85px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 30px;
+  margin-top: 50px;
+}
+.image-container {
+  text-align: center;  /* Centers the image horizontally */
+}
+.image-container img {
+  width: 500px;         /* Larger width */
+  height: 600px;        /* Larger height */
+  object-fit: contain;  /* Makes sure the image doesn't get distorted */
 }
 h2 {
   color:aquamarine;
@@ -26,15 +34,39 @@ p {
     color: #0000ff;
     width: 60%;
 }
-.box {
-    float: right;
-    margin-left: 15px;
-    width: 350px;
-    height: 150px;
-    border-radius: 5px;
-    background-color: rgb(207 232 220);
-    padding: 1em;
-  }
+.container {
+  width: 100%;
+  overflow: hidden; /* Clears the floats */
+}
+
+.container {
+  width: 100%;
+  overflow: hidden; /* Clears the floats */
+}
+.float-item {
+  float: left;
+  width: 33.33%;  /* Each link takes up one-third of the container */
+  height: 150px;  /* Fixed height */
+  display: flex;  /* Enables Flexbox layout */
+  align-items: center;  /* Vertically centers text */
+  justify-content: center;  /* Horizontally centers text */
+  text-align: center; /* Centers text inside the link */
+  padding: 10px;
+  box-sizing: border-box; /* Includes padding in width calculation */
+  background-color: green;
+  font-size: 50px;
+  text-decoration: none; /* Removes underline */
+  color: yellow; /* Text color */
+}
+.float-item:hover {
+  background-color: #ddd; /* Hover effect */
+}
+.float-item:hover {
+  background-color: #ddd; /* Hover effect */
+}
+.float-item:hover {
+  background-color: #ddd; /* Hover effect */
+}
 .positioned {
    position: relative;
    background:rgb(3 0 142);
@@ -43,22 +75,25 @@ p {
    top: 150px;
    left: 150px;
   }
+.top-left-image {
+   position:absolute;
+   top: 10px;
+   left: 10px;
+   width: 100px;
+   height: auto;
+}
+.top-right-image {
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  margin-top: 50px;
+  height: auto;
+}
 /* ul {
     display: none;
 } */
 ol {
     display: none;
 }
-.container {
-    position: absolute;  /* Make the container the reference point */
-    width: 100vw;        /* Full viewport width */
-    height: 100vh;       /* Full viewport height */
-  }
-img {
-    width: 300px;
-    height: 300px;
-    position: absolute;   /* Allow positioning relative to the container */
-    top: 50%;             /* Move to 50% of the container's height */
-    left: 50%;            /* Move to 50% of the container's width */
-    transform: translate(-50%, -50%);  /* Adjust by 50% of the image's size to center it */
-  }
+
