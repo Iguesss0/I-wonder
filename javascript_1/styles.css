@@ -81,6 +81,7 @@ p {
    left: 10px;
    width: 250px;
    height: auto;
+   transition: transform 1s ease-in-out;
 }
 .top-right-image {
   position:absolute;
@@ -89,11 +90,48 @@ p {
   width: 150px;
   margin-top: 350px;
   height: auto;
+  transition: transform 1s ease-in-out;
+}
+.top-left-image {
+  left: -300px;
+  animation: slideInLeft 1s forwards;
+}
+
+.top-right-image {
+  right: -300px;
+  animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+      left: -300px;
+  }
+  100% {
+      left: 10px;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      right: -300px;
+  }
+  100% {
+      right: 10px;
+  }
 }
 ul {
     display: none;
 } 
 ol {
     display: none;
+}
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
 }
 

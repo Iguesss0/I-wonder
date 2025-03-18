@@ -25,4 +25,45 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!clueless) {
         console.log("You haven't played GeoGuessr yet");
     }
-});
+        let container = document.querySelector(".container");
+    
+        // Check if the element is in the viewport
+        function checkVisibility() {
+            let rect = container.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                container.classList.add("visible"); // Add the visible class when the element is in the viewport
+            }
+        }
+    
+        // Add fade-in class o container
+        container.classList.add("fade-in");
+    
+        // Trigger the visibility check on scroll
+        window.addEventListener("scroll", checkVisibility);
+        
+        // Also check on initial load
+        checkVisibility();
+    });
+        const leftImage = document.querySelector(".top-left-image");
+        const rightImage = document.querySelector(".top-right-image");
+    
+        // Function to check visibility
+        function checkVisibility() {
+            const rectLeft = leftImage.getBoundingClientRect();
+            const rectRight = rightImage.getBoundingClientRect();
+            
+            // Add animation class when images are in the viewport
+            if (rectLeft.top >= 0 && rectLeft.bottom <= window.innerHeight) {
+                leftImage.classList.add("visible");
+            }
+            if (rectRight.top >= 0 && rectRight.bottom <= window.innerHeight) {
+                rightImage.classList.add("visible");
+            }
+        }
+    
+        // Trigger on page load and scroll
+        window.addEventListener("scroll", checkVisibility);
+        checkVisibility();  // Also check on initial load
+    
+
+

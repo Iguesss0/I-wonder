@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Street View with Path Highlight and Dots</title>
+    <style>
+      /* Set the size of the map */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=geometry,places&callback=initMap" async defer></script>
+
+    <script>
+      let map, streetViewService, panorama;
+      const markers = [];
+
+      function initMap() {
+        // Initialize the map centered at a location
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 40.748817, lng: -73.985428 }, // Change to your desired location
+          zoom: 14,
+        });
+
+        // Initialize the Street View service
+        streetViewService = new google.maps.StreetViewService();
+
+        // Create a panorama object for street view display
+        panorama = new google.maps.StreetViewPanorama(document.createElement('div'), {
+          position: { lat: 40.748817, lng: -73.985428 },
+          pov: {
+            heading: 34,
+            pitch: 10
+          },
+          zoom: 1
+        });
+
+        // Set the map's StreetView to the created panorama
+        map.setStreetView(panorama);
+
+        // Example: Find available Street View paths around the location
+        showStreetViewPaths({ lat: 40.748817, lng: -73.985428 });
+      }
+
+      function showStreetViewPaths(center) {
+        // Create a request for the Street View service
+        const request = {
+          location: center,
+          radius: 2000, // Area radius to search for Street View coverage
+        };
+
+        // Search for street view data around the location
+        streetViewService.getPanoramaByLocation(request.location, request.radius, (result, status) => {
+          if (status === google.maps.StreetViewStatus.OK) {
+            console.log('Street View path found:', result);
+            const pathCoordinates = getStreetViewPaths(result);
+
+            // Loop through the paths and place dots (markers) on them
+            pathCoordinates.forEach((coord) => {
+              placeDotMarker(coord);
+            });
+          } else {
+            console.error('No street view available in this area.');
+          }
+        });
+      }
+
+      // Function to simulate the creation of path coordinates (this is a placeholder)
+      function getStreetViewPaths(result) {
+        // This function should return an array of coordinates along a street view path
+        // Example hardcoded coordinates
+        return [
+          { lat: 40.748817, lng: -73.985428 },
+          { lat: 40.748600, lng: -73.985100 },
+          { lat: 40.748300, lng: -73.984800 },
+          // Add more coordinates based on the result
+        ];
+      }
+
+      // Function to place dots (markers) for each panorama location
+      function placeDotMarker(position) {
+        const marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            scaledSize: new google.maps.Size(8, 8),
+          },
+        });
+
+        // Add click event to each marker to open panorama
+        marker.addListener("click", () => {
+          panorama.setPosition(position);
+          map.setStreetView(panorama);
+        });
+
+        markers.push(marker);
+      }
+    </script>
+  </body>
+</html>
