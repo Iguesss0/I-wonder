@@ -1,14 +1,64 @@
-body{
+body {
     background-color:  lightyellow;
 }
-h1 {
-    color: purple;
-    text-align: center;
-    font-size: 50px;
-    font-family:monospace;
-    padding: 50px 50px 50px 50px;
-    margin: 50px 50px 50px 50px
+header {
+  color: purple;
+  text-align: center; /* Centers header text */
+  font-size: 85px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 30px;
+  margin-top: 50px;
 }
+/* Ensure the container is set to be a flex container */
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;  /* Stack the images vertically */
+  justify-content: center; /* Center the images vertically within the container */
+  align-items: center;     /* Align the images horizontally to the center */
+  height: 100vh;           /* Ensure the container fills the viewport */
+}
+.card {
+  margin-top: 20px; /* Add some margin if needed */
+}
+.card-body p {
+  background-color: transparent;
+  color: inherit;
+}
+/* Aerial View Image (centered in the container) */
+.aerial-view {
+  width: 80%;  /* Adjust width of Aerial View image */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it's behind other images */
+}
+
+/* Position "Welcome to Wagga Wagga" image (above the Aerial View image) */
+.top-left-image {
+  position: absolute;
+  top: 10px;    /* Position it 10px from the top */
+  left: 10px;   /* Position it 10px from the left */
+  max-width: 100px;  /* Set maximum width */
+  height: auto;      /* Maintain aspect ratio */
+  z-index: 2;        /* Ensure it's above the Aerial View image */
+}
+
+/* Position "rugby.jpeg" image (same latitude as "Welcome to Wagga Wagga" image) */
+.top-right-image {
+  position: absolute;
+  top: 10px;     /* Position it at the same vertical level as "Welcome to Wagga Wagga" */
+  right: 10px;   /* Position it 10px from the right */
+  max-width: 100px; /* Set maximum width */
+  height: auto;     /* Maintain aspect ratio */
+  z-index: 2;       /* Ensure it stays above the Aerial View image */
+}
+.top-images-wrapper {
+  display: flex;
+  justify-content: space-between; /* Space images on the same horizontal level */
+  position: absolute;  /* Absolute positioning to allow overlay on the Aerial View image */
+  width: 100%;         /* Full width of the container */
+  top: 10px;           /* Align both images at the same vertical level (top) */
+}
+
 h2 {
   color:aquamarine;
   text-align:left;
@@ -26,15 +76,50 @@ p {
     color: #0000ff;
     width: 60%;
 }
-.box {
-    float: right;
-    margin-left: 15px;
-    width: 350px;
-    height: 150px;
-    border-radius: 5px;
-    background-color: rgb(207 232 220);
-    padding: 1em;
-  }
+.container {
+  width: 100%;
+  overflow: hidden; /* Clears the floats */
+}
+
+.container {
+  width: 100%;
+  overflow: hidden; /* Clears the floats */
+}
+.float-item {
+  color: yellow; 
+  background-color: green;
+  font-size: 50px;
+  text-decoration: none;
+  word-wrap: break-word;
+  display: flex; /* Use flex to align the text */
+  justify-content: center; /* Horizontally center text */
+  align-items: center; /* Vertically center text */
+  width: 100%; /* Full width of the container */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 1 1 33.33%; /* Allow flexibility and control width */
+  height: auto; /* Let the height adjust based on content */
+}
+
+.container, .row, .col {
+  overflow: visible;  /* Prevent clipping of content */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line if needed */
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  flex: 1 1 33%;  /* Adjusts column size */
+}
+
 .positioned {
    position: relative;
    background:rgb(3 0 142);
@@ -43,22 +128,63 @@ p {
    top: 150px;
    left: 150px;
   }
-/* ul {
+.top-left-image {
+   position: absolute;
+   bottom: 10px;
+   left: 10px;
+   width: 250px;
+   height: auto;
+   transition: transform 1s ease-in-out;
+}
+.top-right-image {
+  position:absolute;
+  top: 20px;
+  right: 10px;
+  width: 150px;
+  margin-top: 300px;
+  height: auto;
+  transition: transform 1s ease-in-out;
+}
+.top-left-image {
+  left: -300px;
+  animation: slideInLeft 1s forwards;
+}
+
+.top-right-image {
+  right: -300px;
+  animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+      left: -300px;
+  }
+  100% {
+      left: 10px;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      right: -300px;
+  }
+  100% {
+      right: 10px;
+  }
+}
+ul {
     display: none;
-} */
+} 
 ol {
     display: none;
 }
-.container {
-    position: absolute;  /* Make the container the reference point */
-    width: 100vw;        /* Full viewport width */
-    height: 100vh;       /* Full viewport height */
-  }
-img {
-    width: 300px;
-    height: 300px;
-    position: absolute;   /* Allow positioning relative to the container */
-    top: 50%;             /* Move to 50% of the container's height */
-    left: 50%;            /* Move to 50% of the container's width */
-    transform: translate(-50%, -50%);  /* Adjust by 50% of the image's size to center it */
-  }
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
