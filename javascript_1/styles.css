@@ -9,14 +9,56 @@ header {
   padding: 30px;
   margin-top: 50px;
 }
+/* Ensure the container is set to be a flex container */
 .image-container {
-  text-align: center;  /* Centers the image horizontally */
+  position: relative;
+  display: flex;
+  flex-direction: column;  /* Stack the images vertically */
+  justify-content: center; /* Center the images vertically within the container */
+  align-items: center;     /* Align the images horizontally to the center */
+  height: 100vh;           /* Ensure the container fills the viewport */
 }
-.image-container img {
-  width: 500px;         /* Larger width */
-  height: 600px;        /* Larger height */
-  object-fit: contain;  /* Makes sure the image doesn't get distorted */
+.card {
+  margin-top: 20px; /* Add some margin if needed */
 }
+.card-body p {
+  background-color: transparent;
+  color: inherit;
+}
+/* Aerial View Image (centered in the container) */
+.aerial-view {
+  width: 80%;  /* Adjust width of Aerial View image */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1; /* Ensure it's behind other images */
+}
+
+/* Position "Welcome to Wagga Wagga" image (above the Aerial View image) */
+.top-left-image {
+  position: absolute;
+  top: 10px;    /* Position it 10px from the top */
+  left: 10px;   /* Position it 10px from the left */
+  max-width: 100px;  /* Set maximum width */
+  height: auto;      /* Maintain aspect ratio */
+  z-index: 2;        /* Ensure it's above the Aerial View image */
+}
+
+/* Position "rugby.jpeg" image (same latitude as "Welcome to Wagga Wagga" image) */
+.top-right-image {
+  position: absolute;
+  top: 10px;     /* Position it at the same vertical level as "Welcome to Wagga Wagga" */
+  right: 10px;   /* Position it 10px from the right */
+  max-width: 100px; /* Set maximum width */
+  height: auto;     /* Maintain aspect ratio */
+  z-index: 2;       /* Ensure it stays above the Aerial View image */
+}
+.top-images-wrapper {
+  display: flex;
+  justify-content: space-between; /* Space images on the same horizontal level */
+  position: absolute;  /* Absolute positioning to allow overlay on the Aerial View image */
+  width: 100%;         /* Full width of the container */
+  top: 10px;           /* Align both images at the same vertical level (top) */
+}
+
 h2 {
   color:aquamarine;
   text-align:left;
@@ -44,29 +86,40 @@ p {
   overflow: hidden; /* Clears the floats */
 }
 .float-item {
-  float: left;
-  width: 33.33%;  /* Each link takes up one-third of the container */
-  height: 150px;  /* Fixed height */
-  display: flex;  /* Enables Flexbox layout */
-  align-items: center;  /* Vertically centers text */
-  justify-content: center;  /* Horizontally centers text */
-  text-align: center; /* Centers text inside the link */
-  padding: 10px;
-  box-sizing: border-box; /* Includes padding in width calculation */
+  color: yellow; 
   background-color: green;
   font-size: 50px;
-  text-decoration: none; /* Removes underline */
-  color: yellow; /* Text color */
+  text-decoration: none;
+  word-wrap: break-word;
+  display: flex; /* Use flex to align the text */
+  justify-content: center; /* Horizontally center text */
+  align-items: center; /* Vertically center text */
+  width: 100%; /* Full width of the container */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 1 1 33.33%; /* Allow flexibility and control width */
+  height: auto; /* Let the height adjust based on content */
 }
-.float-item:hover {
-  background-color: #ddd; /* Hover effect */
+
+.container, .row, .col {
+  overflow: visible;  /* Prevent clipping of content */
 }
-.float-item:hover {
-  background-color: #ddd; /* Hover effect */
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line if needed */
 }
-.float-item:hover {
-  background-color: #ddd; /* Hover effect */
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  flex: 1 1 33%;  /* Adjusts column size */
 }
+
 .positioned {
    position: relative;
    background:rgb(3 0 142);
@@ -76,8 +129,8 @@ p {
    left: 150px;
   }
 .top-left-image {
-   position:absolute;
-   top: 10px;
+   position: absolute;
+   bottom: 10px;
    left: 10px;
    width: 250px;
    height: auto;
@@ -85,10 +138,10 @@ p {
 }
 .top-right-image {
   position:absolute;
-  top: 10px;
+  top: 20px;
   right: 10px;
   width: 150px;
-  margin-top: 350px;
+  margin-top: 300px;
   height: auto;
   transition: transform 1s ease-in-out;
 }

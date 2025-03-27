@@ -14,22 +14,62 @@
         <ul>Something2</ul>
         <ul>Something3</ul>
     </main>
-    <img src="Welcome_to_Wagga_Wagga_sign.webp" alt="Left Image" class="top-left-image">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://www.therural.com.au">Local News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.waggawaggaaustralia.com.au/visitor-information/city-of-good-sports/">Sports</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
         <section id="Gallery" class="gallery-section">
             <header id="myHeading"></header>
             <!-- <a href="https://www.google.com">Visit Google</a> -->
-    <img src="rugby.jpeg" alt="Right Image" class="top-right-image">
-            <div class="image-container">
-                 <img src="Wagga_Wagga.jpg" alt="A scenic view of Wagga Wagga">
+            <div class="image-container position-relative">
+                <!-- Replace the Aerial View image with a card -->
+                <div class="card" style="width: 18rem;">
+                    <img src="Wagga_Wagga.jpg" class="card-img-top" alt="A scenic view of Wagga Wagga">
+                    <div class="card-body">
+                        <p class="card-text">A scenic aerial view of Wagga Wagga.</p>
+                    </div>
+                </div>
             </div>
+            <div class="image-container position-relative">
+                <!-- Welcome to Wagga Wagga image with Bootstrap classes -->
+                <img src="Welcome_to_Wagga_Wagga_sign.webp" alt="Left Image" class="top-left-image img-fluid">
+                
+                <!-- Aerial View image (already in the original code) -->
+            </div>
+            
+            <!-- Rugby image with Bootstrap classes -->
+            <img src="rugby.jpeg" alt="Rugby Image" class="top-right-image img-fluid">            
         </section>
         <main>
-            <nav>
-            <div class="container">
-                <a href="https://en.wikipedia.org/wiki/Wagga_Wagga" class="float-item">Wiki</a>
-                <a href="https://www.google.com/maps/place/Wagga+Wagga+NSW+2650,+Australia/@-35.1380543,147.2816355,12z/data=!3m1!4b1!4m6!3m5!1s0x6b18994788e09f6f:0x40609b49043ef50!8m2!3d-35.1081689!4d147.3598323!16s%2Fm%2F026bztp?entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D" class="float-item">Location</a>
-                <a href="https://visitwagga.com/discover/seendo" class="float-item">Things To Do</a>
-            </div>      
+            <nav class="image-nav">
+            <div class="container-fluid">
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col-4">
+                        <a href="https://en.wikipedia.org/wiki/Wagga_Wagga" class="float-item">Wiki</a>
+                      </div>
+                      <div class="col-4">
+                        <a href="https://www.google.com/maps/place/Wagga+Wagga+NSW+2650,+Australia/@-35.1380543,147.2816355,12z/data=!3m1!4b1!4m6!3m5!1s0x6b18994788e09f6f:0x40609b49043ef50!8m2!3d-35.1081689!4d147.3598323!16s%2Fm%2F026bztp?entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D" class="float-item">Location</a>
+                      </div>
+                      <div class="col-4">
+                        <a href="https://visitwagga.com/discover/seendo" class="float-item">Things To Do</a>
+                      </div>
+                    </div>
+                </div>
             </nav>        
         </main>
     <footer>
@@ -37,5 +77,6 @@
         <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
