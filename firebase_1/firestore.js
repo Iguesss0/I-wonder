@@ -1,5 +1,5 @@
 // firestore.js
-import { db } from './firebase.js';
+import { db } from './firebaseconfig.js';
 import {
   collection, addDoc, getDocs, updateDoc, deleteDoc, doc
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
